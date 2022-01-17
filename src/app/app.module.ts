@@ -8,22 +8,18 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 
 import { itemsReducer } from './state/reducers/items.reducers';
-
+import { ROOT_REDUCERS } from './state/app.state';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({
-      estadoDeItems: itemsReducer
-    }),//NOTE: esta línea ha sido añadida por @ngrx/store
-    StoreDevtoolsModule.instrument({ name: 'TEST' })//NOTE: esta línea ha sido añadida por @ngrx/store-devtools
+    StoreModule.forRoot(ROOT_REDUCERS), //NOTE: esta línea ha sido añadida por @ngrx/store
+    StoreDevtoolsModule.instrument({ name: 'TEST' }), //NOTE: esta línea ha sido añadida por @ngrx/store-devtools
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
