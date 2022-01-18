@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store'; //NOTE: paquetes que debemos importar para usar NgRX
 
-import { loadItems } from '../actions/items.actions';
 import { ItemsState } from '@core/models/item.state';
+import { loadItems } from '../actions/items.actions';
 
 //NOTE: declaramos un estado inicial
 export const initialState: ItemsState = { loading: false, items: [] };
