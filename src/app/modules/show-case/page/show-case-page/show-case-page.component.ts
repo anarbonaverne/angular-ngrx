@@ -16,10 +16,11 @@ export class ShowCasePageComponent implements OnInit {
   constructor(private store: Store<any>) {}
 
   ngOnInit(): void {
-    // Nos subscribimos a los cambios en el valor de loading, haciendo uso del selector
+    //NOTE: Nos subscribimos a los cambios en el valor de loading, haciendo uso del selector
     this.loading$ = this.store.select(selectLoading);
 
-    // Hacemos dispatch (envío) de la acción loadItems, que será la que cambie el valor de this.loading$
+    //NOTE: Hacemos dispatch (envío) de la acción loadItems, que será la que cambie el valor de this.loading$
+    //NOTE2: Le indica a la aplicación que comience a cargar los datos
     this.store.dispatch(loadItems());
   }
 }
